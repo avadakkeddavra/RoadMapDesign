@@ -21,20 +21,19 @@
         <div class="sidebar-body">
             <ul class="collapsible">
                 <li><a href=""><i class="material-icons">dashboard</i><span>Dashboard</span></a></li>
-                <li><a href=""><i class="material-icons">compare</i><span>Compare</span></a></li>
+                <li><a href=""><i class="material-icons">person</i><span>User page</span></a></li>
                 <li>
-                    <div class="collapsible-header">
+                    <a class="collapsible-header">
                         <i class="material-icons">school</i><span>Match</span>
                         <i class="fa fa-angle-down"></i>
-                    </div>
+                    </a>
                     <div class="collapsible-body">
                         <ul>
                             <li> <a href="#"><i class="material-icons">dashboard</i>Dashboard</a></li>
-                            <li> <a href="#"><i class="material-icons">compare</i>Compare</a></li>
-                            <li> <a href="#"><i class="material-icons">school</i>Match</a></li>
                         </ul>
                     </div>
                 </li>
+                <li><a href=""><i class="material-icons">show_chart</i><span>Skill logs</span></a></li>
             </ul>
         </div>
     </div>
@@ -50,11 +49,220 @@
           </ul>
         </div>
       </nav>
+      
+      <div class="wrapper">
+           <section class="stats">
+               <div class="row">
+                   <div class="col m3 s6">
+                       <div class="card">
+                           <i class="material-icons green-text">local_library</i>
+                           <div class="name">Skills</div>
+                           <span class="mark">125</span>
+                           <div class="clearfix"></div>
+                       </div>
+                   </div>
+                   <div class="col m3 s6">
+                       <div class="card">
+                           <i class="material-icons red-text">group</i>
+                           <div class="name">Total mark</div>
+                           <span class="mark">1252</span>
+                           <div class="clearfix"></div>
+                       </div>
+                   </div>
+                   <div class="col m3 s6">
+                       <div class="card">
+                           <i class="material-icons orange-text">high_quality</i>
+                           <div class="name">High level users</div>
+                           <span class="mark">6</span>
+                           <div class="clearfix"></div>
+                       </div>
+                   </div>
+                   <div class="col m3 s6">
+                       <div class="card">
+                           <i class="material-icons purple-text">brightness_medium</i>
+                           <div class="name">Medium level users</div>
+                           <span class="mark">8</span>
+                           <div class="clearfix"></div>
+                       </div>
+                   </div>
+               </div>
+           </section>
+            <section class="users-table">
+                <div class="card">
+                   <div class="card-title">Users</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Total mark</th>
+                                <th>Created</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlighted">
+                                <td>1</td>
+                                <td>Alex</td>
+                                <td>avadakkeddavra@gmail.com</td>
+                                <td><span>245</span> <span class="badge purple">hight</span></td>
+                                <td>01-02-2018</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>David</td>
+                                <td>david.smartit@gmail.com</td>
+                                <td><span>145</span> <span class="orange badge">low</span></td>
+                                <td>01-02-2018</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Kostya</td>
+                                <td>Konstantin.smartit@gmail.com</td>
+                                <td><span>345</span> <span class="badge green">medium</span></td>
+                                <td>01-02-2018</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Vlad</td>
+                                <td>vlad.smartit@gmail.com</td>
+                                <td><span>45</span> <span class="badge blue">hight</span></td>
+                                <td>01-02-2018</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+           </section>
+           <section class="skills">
+               <div class="row">
+                   <div class="col m4 s6">
+                       <div class="card">
+                           <div class="card-title">
+                               Create skill
+                           </div>
+                           <div class="card-body">
+                               <form action="">
+                                   <div class="input-field">
+                                       <input type="text" name="name">
+                                       <label for="">Skill name</label>
+                                   </div>
+                                   <div class="input-field">
+                                        <select name="category_id" id="category_id">
+                                           <option value="">None</option>
+                                            <option value="">LocalStorage</option>
+                                            <option value="">Node.js</option>
+                                            <option value="">PHP</option>
+                                            <option value="">Laravel</option>
+                                            <option value="">Angular</option>
+                                        </select>
+                                       <label for="">Category</label>
+                                   </div>
+                                   <div class="input-field">
+                                       <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                                        <label for="textarea2">Description</label>
+                                   </div>
+                                   <button class="btn">Create</button>
+                                   <div class="clearfix"></div>
+                               </form>
+                           </div>
+                       </div>
+                       
+                       <div class="card">
+                           <div class="card-title">
+                               Create category
+                           </div>
+                           <div class="card-body">
+                               <form action="">
+                                   <div class="input-field">
+                                       <input type="text" name="name">
+                                       <label for="">Category name</label>
+                                   </div>
+                                   <div class="input-field">
+                                       <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                                        <label for="textarea2">Description</label>
+                                   </div>
+                                   <button class="btn blue">Create</button>
+                                   <div class="clearfix"></div>
+                               </form>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col m8 s6">
+                       <div class="card">
+                          <div class="card-title">
+                              <span>Skills marks for Alex</span>
+                              <ul class="actions right">
+                                  <li>
+                                      <i class="material-icons" id="filters">filter_list</i>
+                                  </li>
+                              </ul>
+                          </div>
+                           <table>
+                               <thead>
+                                   <tr>
+                                       <th>Skill name</th>
+                                       <th>Mark</th>
+                                       <th>Destination</th>
+                                       <th>Comment</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr>
+                                       <td>LocalStorage</td>
+                                       <td><input type="text" value="5"></td>
+                                       <td><input type="text" value="10"></td>
+                                       <td>Lorem ipsum dolor sit amet, consectnem, officiis veritatis vero!</td>
+                                   </tr>
+                                   <tr>
+                                       <td>Laravel</td>
+                                       <td><input type="text" value="6"></td>
+                                       <td><input type="text" value="10"></td>
+                                       <td>Lorem ipsum dolor sit amet, consectetur adip</td>
+                                   </tr>
+                                   <tr>
+                                       <td>Angular</td>
+                                       <td><input type="text" value="8"></td>
+                                       <td><input type="text" value="10"></td>
+                                       <td></td>
+                                   </tr>
+                                   <tr>
+                                       <td>React</td>
+                                       <td><input type="text" value="3"></td>
+                                       <td><input type="text" value="10"></td>
+                                       <td>fgxbczderghse4rbfg </td>
+                                   </tr>
+                                   <tr>
+                                       <td>Node.js</td>
+                                       <td><input type="text" value="4"></td>
+                                       <td><input type="text" value="10"></td>
+                                       <td>Lorem ipsum dolor sit amet, consectetur adipisicing</td>
+                                   </tr>
+                               </tbody>
+                           </table>
+                           <div class="table-footer">
+                               <div class="right">
+                                   <ul class="pagination-custom">
+                                       <li class="cursor"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                       <li><a href="#">1</a></li>
+                                       <li><a href="#">2</a></li>
+                                       <li><a href="#">3</a></li>
+                                       <li  class="cursor"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                   </ul>
+                               </div>
+                               <div class="clearfix"></div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </section>
+      </div>  
    </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="app.js"></script>
 <script>
+    M.AutoInit();
+    M.CharacterCounter.init(document.querySelector('#textarea2'));
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.collapsible');
     var instances = M.Collapsible.init(elems, {});

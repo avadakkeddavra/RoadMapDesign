@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700,900&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/radar.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+</head>
+<body>
+    <div class="sidebar z-depth-4">
+        <div class="sidebar-header">
+            <img src="logo.png" alt="" class="responsive-img">
+            <h6>Roadmap</h6>
+        </div>
+        <div class="sidebar-body">
+            <ul class="collapsible">
+                <li><a href=""><i class="material-icons">dashboard</i><span>Dashboard</span></a></li>
+                <li><a href=""><i class="material-icons">person</i><span>User page</span></a></li>
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">school</i><span>Match</span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li> <a href="#"><i class="material-icons">dashboard</i>Dashboard</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href=""><i class="material-icons">show_chart</i><span>Skill logs</span></a></li>
+            </ul>
+        </div>
+    </div>
+   <main style="width:calc(100% - 300px)">
+      <nav class="blue">
+        <div class="nav-wrapper">
+          <i class="fa fa-bars" id="sidebarToggle"></i>
+          <h1 class="page-title">Skills/Categories</h1>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class="wrapper">
+           <section class="skills-matched">
+              <div class="row">
+                  <div class="col m12 s12">
+                      <div class="card">
+                       <div class="card-filters z-depth-3">
+                           <div class="card-filters-header">
+                              <div class="pull-right">
+                                   <i class="material-icons closeFilters">close</i>
+                               </div>
+                               <h4>Create a new category</h4>
+                           </div>
+                               <div class="card-filters-body">
+                                   <form action="">
+                                       <div class="input-field">
+                                           <input type="text">
+                                           <label for="skill">Category name</label>
+                                       </div>
+                                       <div class="input-field">
+                                            <textarea name="" id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                                           <label for="user">User</label>
+                                       </div>
+                                       <button class="btn blue">Create</button>
+                                   </form>
+                               </div>
+                           </div>
+                          <div class="card-title">
+                              <span>Categories</span>
+                              <ul class="actions right">
+                                <li>
+                                    <i class="material-icons filters">add</i>
+                                </li>
+                              </ul>
+                          </div>
+                          <div class="card-body">
+                              <table class="responsive-table highlight">
+                                  <thead>
+                                      <tr>
+                                          <th>Name</th>
+                                          <th>Description</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td>Backend</td>
+                                          <td>_______</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Algoritms</td>
+                                          <td>_______</td>
+                                      </tr>
+                                         <tr>
+                                          <td>Frontend</td>
+                                          <td>_______</td>
+                                      </tr>
+                                         <tr>
+                                          <td>Frameworks</td>
+                                          <td>_______</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Matchine learning</td>
+                                          <td>_______</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                              <div class="table-footer">
+                                   <div class="right">
+                                       <ul class="pagination-custom">
+                                           <li class="cursor"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                           <li><a href="#">1</a></li>
+                                           <li><a href="#">2</a></li>
+                                           <li><a href="#">3</a></li>
+                                           <li  class="cursor"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                       </ul>
+                                   </div>
+                                   <div class="clearfix"></div>
+                               </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col m12 s12">
+                       <div class="card">
+                           <div class="card-filters z-depth-3">
+                               <div class="card-filters-header">
+                                  <div class="pull-right">
+                                       <i class="material-icons closeFilters">close</i>
+                                   </div>
+                                   <h4>Create a new skill</h4>
+                               </div>
+                                   <div class="card-filters-body">
+                                       <form action="">
+                                           <div class="input-field">
+                                               <input type="text">
+                                               <label for="skill">Skill name</label>
+                                           </div>
+                                           <div class="input-field">
+                                               <select name="" id="">
+                                                   <option value="">LocalStorage</option>
+                                                   <option value="">Backend</option>
+                                                   <option value="">Frontend</option>
+                                                   <option value="">Algoritms</option>
+                                               </select>
+                                               <label for="skill">Category</label>
+                                           </div>
+                                           <div class="input-field">
+                                                <textarea name="" id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                                               <label for="user">User</label>
+                                           </div>
+                                           <button class="btn blue">Create</button>
+                                       </form>
+                                   </div>
+                           </div>
+                          <div class="card-title">
+                              <span>Skills</span>
+                              <ul class="actions right">
+                                <li>
+                                    <i class="material-icons filters">add</i>
+                                </li>
+                              </ul>
+                          </div>
+                          <div class="card-body">
+                              <table class="responsive-table highlight">
+                                  <thead>
+                                      <tr>
+                                          <th>Name</th>
+                                          <th>Category</th>
+                                          <th>Description</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td>PHP</td>
+                                          <td>Languages</td>
+                                          <td>_______</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Angular.js</td>
+                                          <td>Languages</td>
+                                          <td>_______</td>
+                                      </tr>
+                                         <tr>
+                                          <td>React.js</td>
+                                          <td>Languages</td>
+                                          <td>_______</td>
+                                      </tr>
+                                         <tr>
+                                          <td>Node.js</td>
+                                          <td>Languages</td>
+                                          <td>_______</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Laravel</td>
+                                          <td>Languages</td>
+                                          <td>_______</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                             <div class="table-footer">
+                                   <div class="right">
+                                       <ul class="pagination-custom">
+                                           <li class="cursor"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                           <li><a href="#">1</a></li>
+                                           <li><a href="#">2</a></li>
+                                           <li><a href="#">3</a></li>
+                                           <li  class="cursor"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                       </ul>
+                                   </div>
+                                   <div class="clearfix"></div>
+                               </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+           </section>
+      </div>  
+   </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="app.js"></script>
+<script>
+    M.AutoInit();
+    M.CharacterCounter.init(document.querySelector('#textarea2'));
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, {});
+  });
+</script>
+</body>
+</html>

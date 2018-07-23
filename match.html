@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700,900&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/radar.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+</head>
+<body>
+    <div class="sidebar z-depth-4">
+        <div class="sidebar-header">
+            <img src="logo.png" alt="" class="responsive-img">
+            <h6>Roadmap</h6>
+        </div>
+        <div class="sidebar-body">
+            <ul class="collapsible">
+                <li><a href=""><i class="material-icons">dashboard</i><span>Dashboard</span></a></li>
+                <li><a href=""><i class="material-icons">person</i><span>User page</span></a></li>
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">school</i><span>Match</span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li> <a href="#"><i class="material-icons">dashboard</i>Dashboard</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href=""><i class="material-icons">show_chart</i><span>Skill logs</span></a></li>
+            </ul>
+        </div>
+    </div>
+   <main style="width:calc(100% - 300px)">
+      <nav class="blue">
+        <div class="nav-wrapper">
+          <i class="fa fa-bars" id="sidebarToggle"></i>
+          <h1 class="page-title">Matches</h1>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class="wrapper">
+           <section class="skills-matched">
+                 
+            <div class="row">
+                    <div class="col m4 s12">
+                        <div class="card">
+                            <div class="card-title">
+                                Choose user & skills filters
+                            </div>
+                            <div class="card-body">
+                                <form action="">
+                                    <div class="input-field">
+                                        <select name="" id="">
+                                            <option value="" class="left" data-icon="user.png">Vlad</option>
+                                            <option value="" class="left" data-icon="user.png">Alex</option>
+                                            <option value="" class="left" data-icon="user.png">Igor</option>
+                                            <option value="" class="left" data-icon="user.png">David</option>
+                                        </select>
+                                        <label for="">User</label>
+                                    </div>
+                                    <div class="input-field">
+                                        <select multiple name="" id="">
+                                           <option value="" disabled>Choose your option</option>
+                                            <option value="">Google Api</option>
+                                            <option value="">Angular.js</option>
+                                            <option value="">Node.js</option>
+                                            <option value="">PHP</option>
+                                        </select>
+                                        <label for="">Skills</label>
+                                    </div>
+                                    <button class="btn blue">Apply</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">Matched chart</div>
+                            <div class="card-body">
+                                <div id="chartdiv" style="height:300px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m8 s12">
+                        <div class="card">
+                            <div class="card-title green white-text lighten-2">
+                                Matched users
+                            </div>
+                            <div class="card-body">
+                                <table class="responsive-table highlight">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Skills</th>
+                                            <th>Persent of matching</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Alex</td>
+                                            <td>
+                                                <div class="chip">Google api</div>
+                                                <div class="chip">Google api</div>
+                                                <div class="chip">Google api</div>
+                                            </td>
+                                            <td>25%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alex</td>
+                                            <td>
+                                                <div class="chip">Google api</div>
+                                                <div class="chip">Google api</div>
+                                                <div class="chip">Google api</div>
+                                            </td>
+                                            <td>25%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alex</td>
+                                            <td>
+                                                <div class="chip">Google api</div>
+                                                <div class="chip">Google api</div>
+                                                <div class="chip">Google api</div>
+                                            </td>
+                                            <td>25%</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+      </div>  
+   </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="app.js"></script>
+<script>
+    M.AutoInit();
+    M.CharacterCounter.init(document.querySelector('#textarea2'));
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, {});
+  });
+</script>
+    <script>
+    
+    var chart = AmCharts.makeChart( "chartdiv", {
+  "type": "radar",
+  "theme": "light",
+  "dataProvider": [ {
+        "skill": "Laravel",
+        "mark1": 8,
+       "mark2": 10,
+      }, {
+        "skill": "PHP",
+        "mark1": 10,
+           "mark2": 10,
+      }, {
+        "skill": "HTML 5",
+        "mark1": 7,
+           "mark2": 10,
+      }, {
+        "skill": "CSS 3",
+        "mark1": 5,
+           "mark2": 10,
+      }, {
+        "skill": "Angular.js",
+        "mark1": 5,
+           "mark2": 10,
+      }, {
+        "skill": "React.js",
+        "mark1": 9,
+        "mark2": 10,
+      },
+        {
+        "skill": "Node.js",
+        "mark1": 10,
+        "mark2": 10,
+      }
+    ],
+      "valueAxes": [ {
+        "axisTitleOffset": 0,
+        "minimum": 0,
+        "maximum":10,
+        "axisAlpha": 0.15
+      } ],
+  "startDuration": 0.5,
+  "graphs": [ {
+    "balloonText": "[[value]] Mark",
+    "bullet": "round",
+    "lineThickness": 2,
+    "valueField": "mark1"
+  } ,{
+    "balloonText": "[[value]] Mark",
+    "bullet": "round",
+    "lineThickness": 2,
+    "valueField": "mark2"
+  } ],
+  "categoryField": "skill",
+  "export": {
+    "enabled": true
+  }
+} );
+    </script>
+</body>
+</html>

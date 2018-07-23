@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700,900&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+</head>
+<body>
+    <div class="sidebar z-depth-4">
+        <div class="sidebar-header">
+            <img src="logo.png" alt="" class="responsive-img">
+            <h6>Roadmap</h6>
+        </div>
+        <div class="sidebar-body">
+            <ul class="collapsible">
+                <li><a href=""><i class="material-icons">dashboard</i><span>Dashboard</span></a></li>
+                <li><a href=""><i class="material-icons">person</i><span>User page</span></a></li>
+                <li>
+                    <a class="collapsible-header">
+                        <i class="material-icons">school</i><span>Match</span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li> <a href="#"><i class="material-icons">dashboard</i>Dashboard</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href=""><i class="material-icons">show_chart</i><span>Skill logs</span></a></li>
+            </ul>
+        </div>
+    </div>
+   <main style="width:calc(100% - 300px)">
+      <nav class="blue">
+        <div class="nav-wrapper">
+          <i class="fa fa-bars" id="sidebarToggle"></i>
+          <h1 class="page-title">LocalStorage</h1>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class="wrapper">
+            <section class="skilllogs">
+                <div class="card">
+                    <div class="card-title">Skill chart</div>
+                    <div class="card-body">
+                        <div class="description">
+                            Statictics of growth on LocalStronge Skill
+                            for Alexey Solodukhin
+                        </div>
+                        <div id="chartdiv" style="height:400px"></div>	
+                    </div>
+                </div>
+            </section>
+      </div>  
+   </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="app.js"></script>
+<script>
+    M.AutoInit();
+    M.CharacterCounter.init(document.querySelector('#textarea2'));
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, {});
+  });
+</script>
+
+<script>
+    var chart = AmCharts.makeChart("chartdiv", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 40,
+    "marginLeft": 40,
+    "autoMarginOffset": 20,
+    "mouseWheelZoomEnabled":true,
+    "dataDateFormat": "YYYY-MM-DD",
+    "valueAxes": [{
+        "id": "v1",
+        "axisAlpha": 0,
+        "position": "left",
+        "ignoreAxisWidth":true
+    }],
+    "balloon": {
+        "borderThickness": 1,
+        "shadowAlpha": 0
+    },
+    "graphs": [{
+        "id": "g1",
+        "balloon":{
+          "drop":true,
+          "adjustBorderColor":false,
+          "color":"#ffffff"
+        },
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "bulletColor": "#FFFFFF",
+        "bulletSize": 5,
+        "hideBulletsCount": 50,
+        "lineThickness": 2,
+        "title": "red line",
+        "useLineColorForBulletBorder": true,
+        "valueField": "value",
+        "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
+    }],
+
+    "chartCursor": {
+        "pan": true,
+        "valueLineEnabled": true,
+        "valueLineBalloonEnabled": true,
+        "cursorAlpha":1,
+        "cursorColor":"#258cbb",
+        "limitToGraph":"g1",
+        "valueLineAlpha":0.2,
+        "valueZoomable":true
+    },
+    "categoryField": "date",
+    "categoryAxis": {
+        "parseDates": true,
+        "dashLength": 1,
+        "minorGridEnabled": true
+    },
+    "export": {
+        "enabled": true
+    },
+    "dataProvider": [{
+        "date": "2012-07-27",
+        "value": 2
+    }, {
+        "date": "2012-07-28",
+        "value": 3
+    }, {
+        "date": "2012-07-29",
+        "value": 5
+    }, {
+        "date": "2012-07-30",
+        "value": 6
+    }, {
+        "date": "2012-07-31",
+        "value": 7
+    }, {
+        "date": "2012-08-01",
+        "value": 8
+    }, {
+        "date": "2012-08-02",
+        "value": 10
+    }]
+});
+
+chart.addListener("rendered", zoomChart);
+
+zoomChart();
+
+function zoomChart() {
+    chart.zoomToIndexes(chart.dataProvider.length - 40, chart.dataProvider.length - 1);
+}
+</script>
+</body>
+</html>

@@ -8,7 +8,7 @@ $('#sidebarToggle').on('click', function() {
         },300);
         
         $('main').animate({
-            width:'100%'
+            width:window.innerWidth - 65+'px'
         },300);
     }else{
         $('.sidebar').removeClass('collapsed')
@@ -21,4 +21,14 @@ $('#sidebarToggle').on('click', function() {
            width:window.innerWidth - 300+'px'
         },300);
     }
+});
+$("#filters, .filters").on('click', function() {
+    $(this).parents('.card').find('.card-filters').animate({
+        right:'0px'
+    },200)
+})
+$('#closeFilters, .closeFilters').on('click', function() {
+    $(this).parents('.card').find('.card-filters').animate({
+        right:'-500px'
+    },200);
 })
